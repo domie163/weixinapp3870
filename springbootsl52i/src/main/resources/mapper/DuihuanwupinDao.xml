@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.DuihuanwupinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.DuihuanwupinEntity" id="duihuanwupinMap">
+        <result property="wupinbianhao" column="wupinbianhao"/>
+        <result property="wupinmingcheng" column="wupinmingcheng"/>
+        <result property="wupinxiangqing" column="wupinxiangqing"/>
+        <result property="jifen" column="jifen"/>
+        <result property="wupintupian" column="wupintupian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.DuihuanwupinVO" >
+		SELECT * FROM duihuanwupin  duihuanwupin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.DuihuanwupinVO" >
+		SELECT  duihuanwupin.* FROM duihuanwupin  duihuanwupin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.DuihuanwupinView" >
+
+		SELECT  duihuanwupin.* FROM duihuanwupin  duihuanwupin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.DuihuanwupinView" >
+		SELECT * FROM duihuanwupin  duihuanwupin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
